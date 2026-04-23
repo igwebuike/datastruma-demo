@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: datastruma-demo
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn datastruma_msp_demo_app:server
