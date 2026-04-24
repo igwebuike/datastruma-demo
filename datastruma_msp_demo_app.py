@@ -8,7 +8,6 @@ import pandas as pd
 import plotly.graph_objects as go
 from dash import Dash, Input, Output, State, dcc, html, no_update, dash_table, ctx
 from dash.dependencies import ALL
-#main code
 COLORS = {
     "bg": "#071120",
     "panel": "#0D1A2B",
@@ -344,6 +343,9 @@ def parse_upload(contents, filename):
 
 def route_pages(pathname):
     return pathname == "/client/rockofages"
+    
+app = Dash(__name__, suppress_callback_exceptions=True)
+server = app.server
 
 app.layout = html.Div(className="page", children=[
     dcc.Location(id="url", refresh=False),
